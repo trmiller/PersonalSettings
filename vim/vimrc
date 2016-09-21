@@ -1,0 +1,10 @@
+" Pathogen - https://github.com/tpope/vim-pathogen
+execute pathogen#infect()
+
+syntax on
+filetype plugin indent on
+
+" NERDTree
+" Auto load NERDTree whenever vim opens
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
