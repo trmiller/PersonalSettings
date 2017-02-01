@@ -8,3 +8,17 @@ filetype plugin indent on
 " Auto load NERDTree whenever vim opens
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+let &t_Co=256
+let mapleader = ","
+nmap <leader>ne :NERDTree<cr>
+set nofoldenable
+syntax enable
+set background=dark
+colorscheme solarized
+set paste
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set number
+autocmd BufWritePost *.py call Flake8()
